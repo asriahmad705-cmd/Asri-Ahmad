@@ -1,0 +1,140 @@
+// ===== DATA PROYEK =====
+var proyek = {
+  html: {
+    judul: "Latihan HTML",
+    gambar: "https://placehold.co/800x500/dc3545/ffffff?text=Latihan+HTML",
+    deskripsi: "Latihan membuat halaman web dengan HTML. Di sini saya belajar membuat struktur halaman, menambahkan foto, dan mengatur ukuran foto menggunakan atribut width dan height.",
+    belajar: [
+      "Struktur dasar HTML (html, head, body)",
+      "Menambahkan gambar dengan tag img",
+      "Mengatur ukuran gambar dengan width dan height",
+      "Membuat judul, paragraf, dan link"
+    ],
+    teknologi: ["HTML5"]
+  },
+  css: {
+    judul: "Latihan CSS",
+    gambar: "https://placehold.co/800x500/0d6efd/ffffff?text=Latihan+CSS",
+    deskripsi: "Latihan mempercantik halaman web dengan CSS. Di sini saya belajar mengatur warna, ukuran, jarak, dan tata letak elemen.",
+    belajar: [
+      "Selector class dan id",
+      "Mengatur warna teks dan latar belakang",
+      "Mengatur margin dan padding",
+      "Mengatur ukuran gambar dengan CSS"
+    ],
+    teknologi: ["HTML", "CSS3"]
+  },
+  js: {
+    judul: "Latihan JavaScript",
+    gambar: "https://placehold.co/800x500/f59e0b/ffffff?text=Latihan+JS",
+    deskripsi: "Latihan membuat halaman menjadi interaktif dengan JavaScript. Di sini saya belajar variabel, fungsi, event, dan mengubah isi halaman.",
+    belajar: [
+      "Variabel dan fungsi",
+      "Event seperti klik dan submit",
+      "Mengambil elemen dengan getElementById",
+      "Validasi form sederhana"
+    ],
+    teknologi: ["HTML", "CSS", "JavaScript"]
+  },
+  bootstrap: {
+    judul: "Latihan Bootstrap 5",
+    gambar: "https://placehold.co/800x500/0dcaf0/ffffff?text=Latihan+Bootstrap",
+    deskripsi: "Latihan membuat website responsif menggunakan framework Bootstrap 5. Di sini saya belajar menggunakan komponen siap pakai seperti navbar, card, grid system, button, badge, dan utility classes untuk mempercepat pembuatan website.",
+    belajar: [
+      "Grid system (container, row, col)",
+      "Komponen Card, Navbar, Button, Badge",
+      "Utility classes (spacing, typography, colors)",
+      "Responsive design tanpa CSS custom"
+    ],
+    teknologi: ["HTML", "CSS", "Bootstrap 5"]
+  }
+};
+
+// ===== LOGIKA HALAMAN DETAIL =====
+var detailRoot = document.getElementById("detailRoot");
+
+if (detailRoot) {
+  var id = new URLSearchParams(window.location.search).get("id");
+  var p = proyek[id];
+
+  if (!p) {
+    detailRoot.classList.add("d-none");
+    document.getElementById("notFound").classList.remove("d-none");
+  } else {
+    document.title = p.judul + " | Portofolio Muh. Asri Ahmad";
+    document.getElementById("crumb").textContent = p.judul;
+    document.getElementById("detailTitle").textContent = p.judul;
+    document.getElementById("detailDesc").textContent = p.deskripsi;
+
+    var img = document.getElementById("detailImg");
+    img.src = p.gambar;
+    img.alt = p.judul;
+
+    var list = document.getElementById("detailList");
+    for (var i = 0; i < p.belajar.length; i++) {
+      var li = document.createElement("li");
+      li.className = "list-group-item";
+      li.textContent = p.belajar[i];
+      list.appendChild(li);
+    }
+
+    var techSpan = document.getElementById("detailTech");
+    techSpan.innerHTML = "";
+    for (var j = 0; j < p.teknologi.length; j++) {
+      var badge = document.createElement("span");
+      badge.className = "badge bg-primary me-1 mt-1";
+      badge.textContent = p.teknologi[j];
+      techSpan.appendChild(badge);
+    }
+  }
+}
+
+// ===== VALIDASI FORM LOGIN =====
+document.addEventListener('DOMContentLoaded', function() {
+  var loginForm = document.getElementById('loginForm');
+  
+  if (loginForm) {
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      var username = document.getElementById('username').value.trim();
+      var password = document.getElementById('password').value;
+      var alertBox = document.getElementById('alertBox');
+
+      alertBox.className = 'alert d-none';
+      alertBox.innerHTML = '';
+      var errors = [];
+
+      if (username === '') {
+        errors.push('Username atau email tidak boleh kosong.');
+      } else if (username.includes('@')) {
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(username)) {
+          errors.push('Format email tidak valid. Contoh: nama@email.com');
+        }
+      } else if (username.length < 4) {
+        errors.push('Username minimal 4 karakter.');
+      }
+
+      if (password === '') {
+        errors.push('Password tidak boleh kosong.');
+      } else if (password.length < 6) {
+        errors.push('Password minimal 6 karakter.');
+      }
+
+      if (errors.length > 0) {
+        alertBox.className = 'alert alert-danger';
+        var listHtml = '<strong>Login gagal:</strong><ul class="mb-0 mt-2">';
+        for (var i = 0; i < errors.length; i++) {
+          listHtml += '<li>' + errors[i] + '</li>';
+        }
+        listHtml += '</ul>';
+        alertBox.innerHTML = listHtml;
+      } else {
+        alertBox.className = 'alert alert-success';
+        alertBox.innerHTML = '<strong>Sukses!</strong> Data login memenuhi ketentuan. Selamat datang!';
+        loginForm.reset();
+      }
+    });
+  }
+});

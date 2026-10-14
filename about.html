@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Tentang Saya | Portofolio Muh. Asri Ahmad</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Portofolio Asri.</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Proyek</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">Tentang Saya</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header Halaman dengan Gradient -->
+  <header class="hero-about text-white py-5 mb-5 position-relative overflow-hidden">
+    <div class="container text-center position-relative" style="z-index: 2;">
+      <h1 class="display-4 fw-bold" data-aos="fade-down" data-aos-duration="1000">Tentang Saya</h1>
+      <p class="lead mb-0 opacity-75" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Mengenal lebih dekat siapa saya dan apa yang sedang saya pelajari.</p>
+    </div>
+  </header>
+
+  <section class="pb-5">
+    <div class="container">
+      
+      <!-- PROFIL UTAMA (Card Glassmorphism + Animasi Zoom In) -->
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-10">
+          <div class="card border-0 shadow-lg rounded-4 overflow-hidden glass-card" data-aos="zoom-in" data-aos-duration="1200">
+            <div class="row g-0 align-items-center">
+              <div class="col-md-4 bg-white d-flex justify-content-center align-items-center p-4">
+                <img src="./gambar/Asri.jpeg" 
+                     class="rounded-circle mb-3 border border-3 border-white shadow object-fit-cover" 
+                      alt="Foto Muh. Asri Ahmad" 
+                       style="width: 160px; height: 160px;">
+              </div>
+              <div class="col-md-8 p-4 p-md-5">
+                <h2 class="fw-bold text-dark mb-1" data-aos="fade-right" data-aos-delay="300">Muh. Asri Ahmad</h2>
+                <p class="text-primary fw-semibold mb-3 fs-5" data-aos="fade-right" data-aos-delay="400">Mahasiswa Pendidikan Teknologi Informasi</p>
+                <p class="text-muted mb-4 lh-lg" data-aos="fade-up" data-aos-delay="500">
+                  Halo! Saya mahasiswa di <strong>Universitas Sulawesi Barat</strong> yang sedang fokus belajar membuat website. 
+                  Saya sangat tertarik dengan bagaimana kode-kode sederhana bisa diubah menjadi tampilan web yang interaktif dan bermanfaat bagi banyak orang.
+                </p>
+                
+                <div class="d-flex gap-2 flex-wrap" data-aos="fade-up" data-aos-delay="600">
+                  <a href="projects.html" class="btn btn-primary rounded-pill px-4 shadow-sm btn-hover-lift">
+                    <i class="bi bi-folder me-1"></i> Lihat Proyek
+                  </a>
+                  <a href="login.html" class="btn btn-outline-secondary rounded-pill px-4 btn-hover-lift">
+                    <i class="bi bi-box-arrow-in-right me-1"></i> Login
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DATA DIRI & TUJUAN (Animasi Staggered / Berurutan) -->
+      <div class="row g-4 mt-2">
+        
+        <!-- Kolom Kiri: Data Diri -->
+        <div class="col-lg-6">
+          <h4 class="fw-bold mb-4 border-bottom pb-2 border-primary text-dark" data-aos="fade-right">Data Diri</h4>
+          
+          <!-- Item 1 -->
+          <div class="d-flex mb-3 align-items-start icon-box" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-wrapper bg-primary text-white">
+              <i class="bi bi-person-fill fs-5"></i>
+            </div>
+            <div>
+              <h6 class="mb-0 text-muted fw-normal small">Nama Lengkap</h6>
+              <p class="fw-bold mb-0 fs-5 text-dark">Muh. Asri Ahmad</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="d-flex mb-3 align-items-start icon-box" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-wrapper bg-success text-white">
+              <i class="bi bi-hash fs-5"></i>
+            </div>
+            <div>
+              <h6 class="mb-0 text-muted fw-normal small">NIM</h6>
+              <p class="fw-bold mb-0 fs-5 text-dark">H0725334</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="d-flex mb-3 align-items-start icon-box" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-wrapper bg-warning text-dark">
+              <i class="bi bi-mortarboard-fill fs-5"></i>
+            </div>
+            <div>
+              <h6 class="mb-0 text-muted fw-normal small">Program Studi</h6>
+              <p class="fw-bold mb-0 fs-5 text-dark">Pendidikan Teknologi Informasi</p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="d-flex mb-3 align-items-start icon-box" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon-wrapper bg-danger text-white">
+              <i class="bi bi-building fs-5"></i>
+            </div>
+            <div>
+              <h6 class="mb-0 text-muted fw-normal small">Fakultas & Kampus</h6>
+              <p class="fw-bold mb-0 fs-5 text-dark">FKIP - Universitas Sulawesi Barat</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Tujuan Belajar -->
+        <div class="col-lg-6">
+          <h4 class="fw-bold mb-4 border-bottom pb-2 border-primary text-dark" data-aos="fade-left">Tujuan & Fokus Belajar</h4>
+          
+          <div class="card border-0 shadow-sm h-100 rounded-4 bg-white" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-body p-4">
+              <p class="text-muted mb-4">Saat ini saya sedang fokus mempelajari dasar-dasar pengembangan web melalui matakuliah di kampus:</p>
+              
+              <!-- Tech Item 1 -->
+              <div class="tech-item d-flex align-items-center mb-3 p-3 bg-light rounded-3" data-aos="flip-up" data-aos-delay="300">
+                <i class="bi bi-filetype-html fs-2 text-danger me-3"></i>
+                <div>
+                  <h6 class="mb-0 fw-bold">HTML (Struktur)</h6>
+                  <small class="text-muted">Menyusun kerangka halaman web semantik.</small>
+                </div>
+              </div>
+
+              <!-- Tech Item 2 -->
+              <div class="tech-item d-flex align-items-center mb-3 p-3 bg-light rounded-3" data-aos="flip-up" data-aos-delay="400">
+                <i class="bi bi-filetype-css fs-2 text-primary me-3"></i>
+                <div>
+                  <h6 class="mb-0 fw-bold">CSS & Bootstrap (Desain)</h6>
+                  <small class="text-muted">Mempercantik tampilan agar rapi dan responsif.</small>
+                </div>
+              </div>
+
+              <!-- Tech Item 3 -->
+              <div class="tech-item d-flex align-items-center p-3 bg-light rounded-3" data-aos="flip-up" data-aos-delay="500">
+                <i class="bi bi-filetype-js fs-2 text-warning me-3"></i>
+                <div>
+                  <h6 class="mb-0 fw-bold">JavaScript (Interaksi)</h6>
+                  <small class="text-muted">Membuat halaman jadi hidup dan dinamis.</small>
+                </div>
+              </div>
+
+              <div class="alert alert-info mt-4 mb-0 rounded-3 border-0 bg-info bg-opacity-10 text-dark" data-aos="fade-in" data-aos-delay="600">
+                <i class="bi bi-info-circle-fill me-2"></i> Website ini dibuat sebagai latihan & pemenuhan tugas matakuliah.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-auto">
+    <small>&copy; 2026 Muh. Asri Ahmad - PTI FKIP Universitas Sulawesi Barat</small>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Inisialisasi Animasi AOS
+    AOS.init({
+      once: true,       // Animasi hanya terjadi sekali saat scroll ke bawah
+      offset: 100,      // Trigger animasi 100px sebelum elemen terlihat
+      duration: 800,    // Durasi animasi default
+      easing: 'ease-out-cubic' // Jenis transisi yang halus
+    });
+  </script>
+  <script src="./js/script.js"></script>
+</body>
+</html>

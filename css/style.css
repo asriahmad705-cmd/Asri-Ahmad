@@ -1,0 +1,142 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main, section {
+  flex: 1;
+}
+
+/* Hero dengan gradient biru */
+.hero-section {
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+}
+.hero-section {
+  background: linear-gradient(135deg, #20c997 0%, #0d6efd 100%);
+}
+
+/* Efek hover pada card */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* Gambar card proyek ukuran seragam */
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Foto hero border putih */
+.hero-section img {
+  object-fit: cover;
+}
+
+/* Navbar brand */
+.navbar-brand {
+  font-size: 1.3rem;
+}
+
+/* Progress bar */
+.progress {
+  border-radius: 10px;
+}
+
+.progress-bar {
+  font-weight: bold;
+}
+
+/* === ANIMASI & EFEK MODERN === */
+
+/* Header gradient background */
+.hero-about {
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 50%, #084298 100%);
+}
+
+/* Efek Glassmorphism pada card profil */
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+/* Hover effect pada foto profil */
+.profile-img-hover {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.profile-img-hover:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 15px 30px rgba(13, 110, 253, 0.3) !important;
+}
+
+/* Icon Box Wrapper */
+.icon-wrapper {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  margin-right: 1rem;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect pada setiap baris data diri */
+.icon-box {
+  padding: 10px 15px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+.icon-box:hover {
+  background-color: #f8f9fa;
+  transform: translateX(8px);
+}
+.icon-box:hover .icon-wrapper {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+/* Hover effect pada tech item */
+.tech-item {
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+.tech-item:hover {
+  background-color: #fff !important;
+  border-color: #dee2e6;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+}
+
+/* Tombol lift effect */
+.btn-hover-lift {
+  transition: all 0.3s ease;
+}
+.btn-hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+}
+
+/* Utility tambahan */
+.rounded-4 {
+  border-radius: 1rem !important;
+}
+
+/* === ANIMASI GANTI WARNA HERO === */
+.hero-animated {
+  background: linear-gradient(-45deg, #0d6efd, #6f42c1, #dc3545, #20c997, #0d6efd);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
