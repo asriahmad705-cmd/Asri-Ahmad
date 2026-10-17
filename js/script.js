@@ -26,7 +26,7 @@ var proyek = {
   },
   js: {
     judul: "Latihan JavaScript",
-    gambar: "https://placehold.co/800x500/f59e0b/ffffff?text=Latihan+JS",
+    gambar: "https://tse1.mm.bing.net/th/id/OIP.6WYwaQfPuMmVMVoYd1EqPQHaEo?r=0&pid=Api&h=220&P=0",
     deskripsi: "Latihan membuat halaman menjadi interaktif dengan JavaScript. Di sini saya belajar variabel, fungsi, event, dan mengubah isi halaman.",
     belajar: [
       "Variabel dan fungsi",
@@ -38,7 +38,7 @@ var proyek = {
   },
   bootstrap: {
     judul: "Latihan Bootstrap 5",
-    gambar: "https://placehold.co/800x500/0dcaf0/ffffff?text=Latihan+Bootstrap",
+    gambar: "https://tse1.mm.bing.net/th/id/OIP.t27breaaHiD6tt56rOmQDwHaE4?r=0&pid=Api&h=220&P=0",
     deskripsi: "Latihan membuat website responsif menggunakan framework Bootstrap 5. Di sini saya belajar menggunakan komponen siap pakai seperti navbar, card, grid system, button, badge, dan utility classes untuk mempercepat pembuatan website.",
     belajar: [
       "Grid system (container, row, col)",
