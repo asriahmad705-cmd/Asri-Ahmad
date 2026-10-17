@@ -2,7 +2,7 @@
 var proyek = {
   html: {
     judul: "Latihan HTML",
-    gambar: "https://placehold.co/800x500/dc3545/ffffff?text=Latihan+HTML",
+    gambar: "https://static.vecteezy.com/system/resources/previews/013/313/458/original/html-icon-3d-rendering-illustration-vector.jpg",
     deskripsi: "Latihan membuat halaman web dengan HTML. Di sini saya belajar membuat struktur halaman, menambahkan foto, dan mengatur ukuran foto menggunakan atribut width dan height.",
     belajar: [
       "Struktur dasar HTML (html, head, body)",
@@ -14,7 +14,7 @@ var proyek = {
   },
   css: {
     judul: "Latihan CSS",
-    gambar: "https://placehold.co/800x500/0d6efd/ffffff?text=Latihan+CSS",
+    gambar: "https://cdn-icons-png.flaticon.com/512/5968/5968242.png",
     deskripsi: "Latihan mempercantik halaman web dengan CSS. Di sini saya belajar mengatur warna, ukuran, jarak, dan tata letak elemen.",
     belajar: [
       "Selector class dan id",
