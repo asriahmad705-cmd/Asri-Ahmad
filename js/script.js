@@ -1,4 +1,4 @@
-// ===== DATA PROYEK =====
+// ===== DATA PROYEK ===== 
 var proyek = {
   html: {
     judul: "Latihan HTML",
