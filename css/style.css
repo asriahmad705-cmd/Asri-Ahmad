@@ -1,72 +1,330 @@
+/* =====================================================
+   PORTOFOLIO MUH. ASRI AHMAD - STYLE.CSS VERSI REVOLUSI
+   Framework: Bootstrap 5.3.3 + Custom CSS Advanced
+   ===================================================== */
+
+/* Font modern dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ===== VARIABEL WARNA GLOBAL ===== */
+:root {
+  --c1: #0d6efd;  /* Biru */
+  --c2: #6f42c1;  /* Ungu */
+  --c3: #d63384;  /* Pink */
+  --c4: #20c997;  /* Hijau tosca */
+  --grad: linear-gradient(135deg, var(--c1), var(--c2), var(--c3));
+}
+
+/* ===== GLOBAL ===== */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
   background-color: #f8f9fa;
+  /* Pola titik halus di latar belakang */
+  background-image: radial-gradient(#e9ecef 1px, transparent 1px);
+  background-size: 22px 22px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 main, section {
   flex: 1;
 }
 
-/* Hero dengan gradient biru */
-.hero-section {
-  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
-}
-.hero-section {
-  background: linear-gradient(135deg, #20c997 0%, #0d6efd 100%);
+h1, h2, h3, h4, h5 {
+  letter-spacing: -0.5px;
 }
 
-/* Efek hover pada card */
-.card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Warna teks saat diblok (selection) */
+::selection {
+  background: var(--c2);
+  color: #fff;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+/* Scrollbar custom gradient */
+::-webkit-scrollbar {
+  width: 10px;
 }
-
-/* Gambar card proyek ukuran seragam */
-.card-img-top {
-  height: 220px;
-  object-fit: cover;
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
-
-/* Foto hero border putih */
-.hero-section img {
-  object-fit: cover;
-}
-
-/* Navbar brand */
-.navbar-brand {
-  font-size: 1.3rem;
-}
-
-/* Progress bar */
-.progress {
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--c1), var(--c2), var(--c3));
   border-radius: 10px;
 }
 
-.progress-bar {
-  font-weight: bold;
+/* ===== NAVBAR GLASSMORPHISM ===== */
+.navbar.bg-dark {
+  background: rgba(33, 37, 41, 0.88) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
 }
 
-/* === ANIMASI & EFEK MODERN === */
+/* Brand dengan teks gradient */
+.navbar-brand {
+  background: linear-gradient(90deg, #74c0fc, #da77f2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
 
-/* Header gradient background */
+/* Garis bawah animasi pada menu */
+.navbar-nav .nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #74c0fc, #da77f2);
+  transition: width 0.35s ease;
+}
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 65%;
+}
+
+/* ===== HERO BERANDA: GRADIENT BERGERAK + BLOB MELAYANG ===== */
+.hero-animated {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(-45deg, #0d6efd, #6f42c1, #dc3545, #20c997, #0d6efd);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* Blob cahaya melayang di belakang konten */
+.hero-animated::before,
+.hero-animated::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  animation: floatBlob 12s ease-in-out infinite;
+  pointer-events: none;
+}
+.hero-animated::before {
+  width: 320px;
+  height: 320px;
+  top: -100px;
+  left: -100px;
+}
+.hero-animated::after {
+  width: 240px;
+  height: 240px;
+  bottom: -80px;
+  right: -80px;
+  animation-delay: -6s;
+}
+
+.hero-animated .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Konten hero masuk satu per satu saat load */
+.hero-animated .container > * {
+  animation: fadeInUp 0.8s ease both;
+}
+.hero-animated .container > *:nth-child(2) { animation-delay: 0.15s; }
+.hero-animated .container > *:nth-child(3) { animation-delay: 0.30s; }
+.hero-animated .container > *:nth-child(4) { animation-delay: 0.45s; }
+
+/* Foto profil: melayang + glow */
+.hero-animated img {
+  object-fit: cover;
+  animation: floatY 4.5s ease-in-out infinite;
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2),
+              0 15px 35px rgba(0, 0, 0, 0.35) !important;
+  transition: transform 0.4s ease;
+}
+.hero-animated img:hover {
+  transform: scale(1.08) rotate(3deg);
+}
+
+/* ===== HEADER HALAMAN ABOUT ===== */
 .hero-about {
-  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 50%, #084298 100%);
+  background: linear-gradient(135deg, #0d6efd 0%, #6f42c1 60%, #d63384 100%);
+  position: relative;
+  overflow: hidden;
+}
+.hero-about::after {
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  top: -80px;
+  right: -60px;
+  animation: floatBlob 10s ease-in-out infinite;
 }
 
-/* Efek Glassmorphism pada card profil */
+/* ===== JUDUL SECTION: GARIS GRADIENT DI BAWAH ===== */
+section h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin-top: 0.6rem;
+  border-radius: 4px;
+  background: var(--grad);
+}
+section h2.text-center::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== ANIMASI MASUK UNTUK SEMUA KOLOM CARD ===== */
+.row > [class*="col-"] {
+  animation: fadeInUp 0.7s ease both;
+}
+.row > [class*="col-"]:nth-child(2) { animation-delay: 0.12s; }
+.row > [class*="col-"]:nth-child(3) { animation-delay: 0.24s; }
+.row > [class*="col-"]:nth-child(4) { animation-delay: 0.36s; }
+
+/* ===== CARD: LIFT + SHINE SWEEP + ZOOM GAMBAR ===== */
+.card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border-radius: 16px !important;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(13, 110, 253, 0.15) !important;
+}
+
+/* Efek kilau menyapu saat card di-hover */
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+.card:hover::after {
+  left: 130%;
+}
+
+/* Gambar proyek zoom halus saat card di-hover */
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.card:hover .card-img-top {
+  transform: scale(1.08);
+}
+
+/* Ikon di dalam card melompat saat hover */
+.card .bi {
+  display: inline-block;
+  transition: transform 0.35s ease;
+}
+.card:hover .bi {
+  transform: translateY(-6px) scale(1.15) rotate(-6deg);
+}
+
+/* ===== TOMBOL: LIFT + GLOW ===== */
+.btn {
+  transition: all 0.25s ease;
+  font-weight: 600;
+}
+.btn:hover {
+  transform: translateY(-3px);
+}
+.btn:active {
+  transform: translateY(0) scale(0.97);
+}
+.btn-primary {
+  background: linear-gradient(135deg, #4e73ff, #6f42c1);
+  border: none;
+  box-shadow: 0 4px 15px rgba(111, 66, 193, 0.35);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #6f42c1, #4e73ff);
+  box-shadow: 0 8px 22px rgba(111, 66, 193, 0.5);
+}
+.btn-light:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Badge membesar sedikit saat hover */
+.badge {
+  transition: transform 0.2s ease;
+}
+.badge:hover {
+  transform: scale(1.12);
+}
+
+/* ===== LIST GROUP: AKSEN GARIS KIRI ===== */
+.list-group-item {
+  border-left: 3px solid transparent;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+.list-group-item:hover {
+  border-left-color: var(--c2);
+  background: #f8f9ff;
+}
+
+/* ===== BREADCRUMB ===== */
+.breadcrumb-item a {
+  color: var(--c2);
+  text-decoration: none;
+}
+.breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+/* ===== FORM LOGIN: GLOW SAAT FOKUS ===== */
+.form-control {
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.form-control:focus {
+  border-color: var(--c2);
+  box-shadow: 0 0 0 0.25rem rgba(111, 66, 193, 0.18);
+}
+.input-group-text {
+  background: #f1f3ff;
+  color: var(--c2);
+  border-radius: 10px 0 0 10px;
+}
+
+/* Alert muncul dengan animasi meluncur */
+.alert {
+  border: none;
+  border-radius: 12px;
+  animation: slideDown 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+
+/* ===== KOMPONEN KHUSUS HALAMAN ABOUT ===== */
 .glass-card {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-/* Hover effect pada foto profil */
 .profile-img-hover {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -75,7 +333,6 @@ main, section {
   box-shadow: 0 15px 30px rgba(13, 110, 253, 0.3) !important;
 }
 
-/* Icon Box Wrapper */
 .icon-wrapper {
   width: 50px;
   height: 50px;
@@ -88,21 +345,20 @@ main, section {
   transition: transform 0.3s ease;
 }
 
-/* Hover effect pada setiap baris data diri */
 .icon-box {
   padding: 10px 15px;
   border-radius: 12px;
   transition: all 0.3s ease;
 }
 .icon-box:hover {
-  background-color: #f8f9fa;
+  background-color: #ffffff;
   transform: translateX(8px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 }
 .icon-box:hover .icon-wrapper {
   transform: scale(1.1) rotate(-5deg);
 }
 
-/* Hover effect pada tech item */
 .tech-item {
   transition: all 0.3s ease;
   border: 1px solid transparent;
@@ -110,33 +366,84 @@ main, section {
 .tech-item:hover {
   background-color: #fff !important;
   border-color: #dee2e6;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   transform: translateY(-3px);
 }
 
-/* Tombol lift effect */
-.btn-hover-lift {
-  transition: all 0.3s ease;
-}
 .btn-hover-lift:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* Utility tambahan */
 .rounded-4 {
   border-radius: 1rem !important;
 }
 
-/* === ANIMASI GANTI WARNA HERO === */
-.hero-animated {
-  background: linear-gradient(-45deg, #0d6efd, #6f42c1, #dc3545, #20c997, #0d6efd);
-  background-size: 400% 400%;
-  animation: gradientShift 8s ease infinite;
+/* ===== FOOTER: GARIS GRADIENT DI ATAS ===== */
+footer {
+  position: relative;
+}
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3), var(--c4));
+}
+footer small {
+  letter-spacing: 0.5px;
 }
 
+/* ===== KEYFRAMES (JANTUNG SEMUA ANIMASI) ===== */
 @keyframes gradientShift {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+@keyframes floatBlob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(30px, -25px) scale(1.1); }
+  66%      { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== AKSESIBILITAS: MATIKAN ANIMASI BAGI USER YANG SENSITIF GERAK ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
