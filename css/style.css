@@ -454,17 +454,18 @@ footer small {
 
 /* Tombol ganti tema */
 #themeToggle {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-width: 2px;
+  border-width: 2.5px;
+  font-size: 1.4rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 #themeToggle:hover {
-  transform: rotate(20deg) scale(1.1);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  transform: rotate(20deg) scale(1.15);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.5);
 }
 
 /* Overlay flash warna-warni (lingkaran yang mekar) */
