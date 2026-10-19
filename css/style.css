@@ -447,3 +447,69 @@ footer small {
     scroll-behavior: auto !important;
   }
 }
+
+/* =====================================================
+   DARK MODE TOGGLE + COLORFUL FLASH TRANSITION
+   ===================================================== */
+
+/* Tombol ganti tema */
+#themeToggle {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-width: 2px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#themeToggle:hover {
+  transform: rotate(20deg) scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+/* Overlay flash warna-warni (lingkaran yang mekar) */
+#themeFlash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background: linear-gradient(-45deg, #0d6efd, #6f42c1, #dc3545, #20c997, #fd7e14);
+  background-size: 300% 300%;
+  clip-path: circle(0% at var(--x, 90%) var(--y, 8%));
+}
+#themeFlash.flash {
+  animation: flashWave 0.9s ease-in-out;
+}
+@keyframes flashWave {
+  0%   { clip-path: circle(0% at var(--x, 90%) var(--y, 8%));   background-position: 0% 50%; }
+  45%  { clip-path: circle(150% at var(--x, 90%) var(--y, 8%)); background-position: 50% 50%; }
+  55%  { clip-path: circle(150% at var(--x, 90%) var(--y, 8%)); background-position: 100% 50%; }
+  100% { clip-path: circle(0% at var(--x, 90%) var(--y, 8%));   background-position: 0% 50%; }
+}
+
+/* Transisi halus semua elemen saat tema berganti */
+body, .card, .navbar, footer,
+.list-group-item, .form-control, .btn,
+.bg-light, .bg-white {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* ===== OVERRIDE TEMA GELAP ===== */
+html[data-bs-theme="dark"] body {
+  background-color: #121417;
+  background-image: radial-gradient(#23262b 1px, transparent 1px);
+}
+html[data-bs-theme="dark"] .bg-light { background-color: #1a1d21 !important; }
+html[data-bs-theme="dark"] body.bg-light { background-color: #121417 !important; }
+html[data-bs-theme="dark"] .bg-white { background-color: #1e2126 !important; }
+html[data-bs-theme="dark"] .card { background-color: #1e2126; }
+html[data-bs-theme="dark"] .glass-card { background: rgba(30, 33, 38, 0.92); }
+html[data-bs-theme="dark"] .navbar.bg-dark { background: rgba(18, 20, 23, 0.9) !important; }
+html[data-bs-theme="dark"] footer { background-color: #0b0d0f !important; }
+html[data-bs-theme="dark"] .text-muted { color: #9aa0a6 !important; }
+html[data-bs-theme="dark"] .icon-box:hover { background-color: #26292e; }
+html[data-bs-theme="dark"] .tech-item:hover { background-color: #26292e !important; border-color: #34383d; }
+html[data-bs-theme="dark"] .list-group-item:hover { background: #26292e; }
+html[data-bs-theme="dark"] .input-group-text { background: #26292e; color: #9ec5ff; }
+html[data-bs-theme="dark"] ::-webkit-scrollbar-track { background: #1a1d21; }
+html[data-bs-theme="dark"] .card:hover { box-shadow: 0 18px 35px rgba(0, 0, 0, 0.5) !important; }
