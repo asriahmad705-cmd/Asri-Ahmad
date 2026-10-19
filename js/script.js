@@ -139,20 +139,15 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// ===== DARK MODE TOGGLE + COLORFUL FLASH =====
+// ===== DARK MODE TOGGLE (TRANSISI MENGALIR) =====
 (function () {
   var htmlEl = document.documentElement;
   var toggleBtn = document.getElementById('themeToggle');
-  if (!toggleBtn) return; // jaga-jaga kalau tombol tidak ada
+  if (!toggleBtn) return;
 
   var icon = toggleBtn.querySelector('i');
 
-  // Buat overlay flash otomatis lewat JS (tidak perlu tambah HTML)
-  var overlay = document.createElement('div');
-  overlay.id = 'themeFlash';
-  document.body.appendChild(overlay);
-
-  // Muat tema yang terakhir dipilih user
+  // Muat tema terakhir
   var saved = localStorage.getItem('theme');
   if (saved === 'dark' || saved === 'light') {
     htmlEl.setAttribute('data-bs-theme', saved);
@@ -167,22 +162,8 @@ document.addEventListener('DOMContentLoaded', function() {
   toggleBtn.addEventListener('click', function () {
     var isDark = htmlEl.getAttribute('data-bs-theme') === 'dark';
     var next = isDark ? 'light' : 'dark';
-
-    // Titik awal lingkaran = posisi tombol ditekan
-    var rect = toggleBtn.getBoundingClientRect();
-    overlay.style.setProperty('--x', (rect.left + rect.width / 2) + 'px');
-    overlay.style.setProperty('--y', (rect.top + rect.height / 2) + 'px');
-
-    // Restart animasi flash
-    overlay.classList.remove('flash');
-    void overlay.offsetWidth;
-    overlay.classList.add('flash');
-
-    // Ganti tema di TENGAH animasi (saat layar tertutup warna-warni)
-    setTimeout(function () {
-      htmlEl.setAttribute('data-bs-theme', next);
-      localStorage.setItem('theme', next);
-      updateIcon();
-    }, 450);
+    htmlEl.setAttribute('data-bs-theme', next);
+    localStorage.setItem('theme', next);
+    updateIcon();
   });
 })();
