@@ -2,7 +2,7 @@
 var proyek = {
   html: {
     judul: "Halaman CV Online Sederhana",
-    gambar: "gambar/from-registrasi.png",
+    gambar: "gambar/halaman cv.png",
     deskripsi: "Proyek pertama saya adalah membuat halaman CV online sederhana menggunakan HTML murni. Di sini saya belajar menyusun struktur halaman web dari nol, mulai dari menuliskan data diri, pendidikan, hingga menambahkan foto profil ke dalam halaman web.",
     belajar: [
       "Membuat struktur dasar halaman HTML (html, head, body)",
@@ -15,7 +15,7 @@ var proyek = {
   },
   css: {
     judul: "Profil Tim Digital",
-    gambar: "https://drive.google.com/file/d/137mZGRks7tZtB39W8EodStnUwEEIFL10/view",
+    gambar: "gambar/profil-tim.png",
     deskripsi: "Proyek kedua saya adalah membuat halaman profil tim digital menggunakan HTML dan CSS. Di sini saya belajar mempercantik tampilan halaman, mengatur warna, tata letak, dan membuat kartu profil untuk setiap anggota tim supaya halaman terlihat rapi dan profesional.",
     belajar: [
       "Menggabungkan HTML dan CSS dalam satu halaman web",
@@ -28,7 +28,7 @@ var proyek = {
   },
   js: {
     judul: "Form Registrasi",
-    gambar: "https://drive.google.com/file/d/1waV5fi6QSu7CIDfibgtO79RYMvGS9f2Q/view",
+    gambar: "gambar/from-registrasi.png",
     deskripsi: "Proyek ketiga saya adalah membuat form registrasi menggunakan HTML, CSS, dan JavaScript. Di sini saya belajar membuat form input yang bisa mengecek apakah data sudah diisi dengan benar atau belum, lalu menampilkan pesan error atau sukses sesuai hasil validasi.",
     belajar: [
       "Membuat form registrasi dengan input nama, email, dan password",
@@ -41,7 +41,7 @@ var proyek = {
   },
   bootstrap: {
     judul: "Web Portofolio Sederhana",
-    gambar: "https://drive.google.com/file/d/14Ux1dd8bAGVmJaJHhRDSu6zK45q9hLDj/view",
+    gambar: "gambar/web portofolio.png",
     deskripsi: "Proyek keempat saya adalah membuat website portofolio pribadi menggunakan HTML, CSS, JavaScript, dan Bootstrap 5. Website ini terdiri dari 5 halaman (Beranda, Proyek, Detail Proyek, Tentang Saya, dan Login) yang semuanya responsif dan saling terhubung. Website yang sedang kamu lihat sekarang inilah hasilnya.",
     belajar: [
       "Membuat navbar responsif yang bisa dibuka-tutup di HP menggunakan Bootstrap",
