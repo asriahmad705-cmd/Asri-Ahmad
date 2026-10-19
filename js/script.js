@@ -1,52 +1,56 @@
 // ===== DATA PROYEK ===== 
 var proyek = {
   html: {
-    judul: "Latihan HTML",
-    gambar: "https://static.vecteezy.com/system/resources/previews/013/313/458/original/html-icon-3d-rendering-illustration-vector.jpg",
-    deskripsi: "Latihan membuat halaman web dengan HTML. Di sini saya belajar membuat struktur halaman, menambahkan foto, dan mengatur ukuran foto menggunakan atribut width dan height.",
+    judul: "Halaman CV Online Sederhana",
+    gambar: "https://drive.google.com/file/d/1jVW-9ytnFNrssPwt90DSLQ4NkO-NFZKU/view",
+    deskripsi: "Proyek pertama saya adalah membuat halaman CV online sederhana menggunakan HTML murni. Di sini saya belajar menyusun struktur halaman web dari nol, mulai dari menuliskan data diri, pendidikan, hingga menambahkan foto profil ke dalam halaman web.",
     belajar: [
-      "Struktur dasar HTML (html, head, body)",
-      "Menambahkan gambar dengan tag img",
-      "Mengatur ukuran gambar dengan width dan height",
-      "Membuat judul, paragraf, dan link"
+      "Membuat struktur dasar halaman HTML (html, head, body)",
+      "Menuliskan data diri, pendidikan, dan pengalaman dalam bentuk teks HTML",
+      "Menambahkan foto profil ke halaman menggunakan tag <img>",
+      "Mengatur ukuran foto dengan atribut width dan height",
+      "Membuat judul, paragraf, daftar, dan link di halaman CV"
     ],
     teknologi: ["HTML5"]
   },
   css: {
-    judul: "Latihan CSS",
-    gambar: "https://cdn-icons-png.flaticon.com/512/5968/5968242.png",
-    deskripsi: "Latihan mempercantik halaman web dengan CSS. Di sini saya belajar mengatur warna, ukuran, jarak, dan tata letak elemen.",
+    judul: "Profil Tim Digital",
+    gambar: "https://drive.google.com/file/d/137mZGRks7tZtB39W8EodStnUwEEIFL10/view",
+    deskripsi: "Proyek kedua saya adalah membuat halaman profil tim digital menggunakan HTML dan CSS. Di sini saya belajar mempercantik tampilan halaman, mengatur warna, tata letak, dan membuat kartu profil untuk setiap anggota tim supaya halaman terlihat rapi dan profesional.",
     belajar: [
-      "Selector class dan id",
-      "Mengatur warna teks dan latar belakang",
-      "Mengatur margin dan padding",
-      "Mengatur ukuran gambar dengan CSS"
+      "Menggabungkan HTML dan CSS dalam satu halaman web",
+      "Mengatur warna latar belakang, warna teks, dan jenis huruf",
+      "Membuat kartu profil untuk setiap anggota tim",
+      "Mengatur tata letak halaman menggunakan CSS (margin, padding, flexbox)",
+      "Memberi efek hover pada elemen supaya halaman lebih interaktif"
     ],
     teknologi: ["HTML", "CSS3"]
   },
   js: {
-    judul: "Latihan JavaScript",
-    gambar: "https://tse1.mm.bing.net/th/id/OIP.6WYwaQfPuMmVMVoYd1EqPQHaEo?r=0&pid=Api&h=220&P=0",
-    deskripsi: "Latihan membuat halaman menjadi interaktif dengan JavaScript. Di sini saya belajar variabel, fungsi, event, dan mengubah isi halaman.",
+    judul: "Form Registrasi",
+    gambar: "https://drive.google.com/file/d/1waV5fi6QSu7CIDfibgtO79RYMvGS9f2Q/view",
+    deskripsi: "Proyek ketiga saya adalah membuat form registrasi menggunakan HTML, CSS, dan JavaScript. Di sini saya belajar membuat form input yang bisa mengecek apakah data sudah diisi dengan benar atau belum, lalu menampilkan pesan error atau sukses sesuai hasil validasi.",
     belajar: [
-      "Variabel dan fungsi",
-      "Event seperti klik dan submit",
-      "Mengambil elemen dengan getElementById",
-      "Validasi form sederhana"
+      "Membuat form registrasi dengan input nama, email, dan password",
+      "Memvalidasi input menggunakan JavaScript (cek kosong, format email, panjang password)",
+      "Menampilkan pesan error kalau input tidak sesuai ketentuan",
+      "Menampilkan pesan sukses kalau semua input sudah valid",
+      "Mencegah form terkirim kalau masih ada input yang salah (preventDefault)"
     ],
     teknologi: ["HTML", "CSS", "JavaScript"]
   },
   bootstrap: {
-    judul: "Latihan Bootstrap 5",
-    gambar: "https://tse1.mm.bing.net/th/id/OIP.t27breaaHiD6tt56rOmQDwHaE4?r=0&pid=Api&h=220&P=0",
-    deskripsi: "Latihan membuat website responsif menggunakan framework Bootstrap 5. Di sini saya belajar menggunakan komponen siap pakai seperti navbar, card, grid system, button, badge, dan utility classes untuk mempercepat pembuatan website.",
+    judul: "Web Portofolio Sederhana",
+    gambar: "https://drive.google.com/file/d/14Ux1dd8bAGVmJaJHhRDSu6zK45q9hLDj/view",
+    deskripsi: "Proyek keempat saya adalah membuat website portofolio pribadi menggunakan HTML, CSS, JavaScript, dan Bootstrap 5. Website ini terdiri dari 5 halaman (Beranda, Proyek, Detail Proyek, Tentang Saya, dan Login) yang semuanya responsif dan saling terhubung. Website yang sedang kamu lihat sekarang inilah hasilnya.",
     belajar: [
-      "Grid system (container, row, col)",
-      "Komponen Card, Navbar, Button, Badge",
-      "Utility classes (spacing, typography, colors)",
-      "Responsive design tanpa CSS custom"
+      "Membuat navbar responsif yang bisa dibuka-tutup di HP menggunakan Bootstrap",
+      "Membuat layout halaman menggunakan Grid System Bootstrap (row dan col)",
+      "Menggunakan komponen Bootstrap: Card, Button, Badge, Alert, Breadcrumb",
+      "Membuat halaman login dengan validasi form menggunakan JavaScript",
+      "Membuat animasi dan dark mode toggle menggunakan CSS dan JavaScript"
     ],
-    teknologi: ["HTML", "CSS", "Bootstrap 5"]
+    teknologi: ["HTML", "CSS", "JavaScript", "Bootstrap 5"]
   }
 };
 
