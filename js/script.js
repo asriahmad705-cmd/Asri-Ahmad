@@ -2,7 +2,7 @@
 var proyek = {
   html: {
     judul: "Halaman CV Online Sederhana",
-    gambar: "gambar/halaman cv.png",
+    gambar: "gambar/halaman cv.jpg",
     deskripsi: "Proyek pertama saya adalah membuat halaman CV online sederhana menggunakan HTML murni. Di sini saya belajar menyusun struktur halaman web dari nol, mulai dari menuliskan data diri, pendidikan, hingga menambahkan foto profil ke dalam halaman web.",
     belajar: [
       "Membuat struktur dasar halaman HTML (html, head, body)",
